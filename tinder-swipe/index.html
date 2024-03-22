@@ -39,4 +39,35 @@
         /* to be filled */
         filter: drop-shadow();
     }
+
+    section {
+        background: #f6f6f6;
+        width: 100%;
+        border-radius: 32px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        position: relative;
+        padding: 16px 6px;
+        margin: 23px;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+
+        & img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+        padding: 0 24px;
+        justify-content: center;
+        align-items: center;
+    }
 </style>
