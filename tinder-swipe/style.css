@@ -80,6 +80,8 @@ footer {
         width: 100%;
         height: 100%;
         z-index: 2;
+        /* "will-change" is intended to be used as a last resort, in order to try to deal with existing performance problems
+        /* will-change: transform rotate; */
 
         & img {
             width: 100%;
