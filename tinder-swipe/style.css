@@ -57,10 +57,31 @@ footer {
     align-items: center;
 
     & button {
+        background: url('tinder-icons.webp') no-repeat;
+        background-position: 0px 0px;
+        background-size: 175px;
         height: 32px;
         width: 32px;
         border-radius: 50%;
+        /* border: 0; */
         border: 1px solid #ccc;
+        cursor: pointer;
+        transition: scale .3s ease;
+
+        &:hover {
+            /* this is to make the buttons bigger when hovering */
+            scale: 1.4;
+        }
+
+        &.is-big {
+            background-size: 250px;
+            width: 48px;
+            height: 48px;
+        }
+
+        &.is-undo {
+            background-position: -142;
+        }
     }
 }
 
