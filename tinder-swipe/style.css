@@ -78,9 +78,21 @@ footer {
             width: 48px;
             height: 48px;
         }
-
+        /* Google trick for images to pick them horizontally */
         &.is-undo {
-            background-position: -142;
+            background-position: -142px 0;
+        }
+
+        &.is-reject {
+            background-position: -151px 0;
+        }
+
+        &.is-superlike {
+            background-position: -71px 0;
+        }
+
+        &.is-like {
+            background-position: -49px 0;
         }
     }
 }
