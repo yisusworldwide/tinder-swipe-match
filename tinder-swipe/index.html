@@ -46,8 +46,11 @@
         const actualCard = event.target.closest('article')
 
         //get initial position of mouse or finger
-        console.log(event)
-        // const startX = e.pageX
+        //console.log(event)
+        const startX = event.pageX ?? event.touches[0].pageX
+
+        //listen the mouse and touch movements
+        
     }
 
     document.addEventListener('mousedown', startDrag)
