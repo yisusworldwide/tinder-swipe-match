@@ -46,10 +46,23 @@
         const actualCard = event.target.closest('article')
 
         //get initial position of mouse or finger
-        //console.log(event)
+            //console.log(event)
         const startX = event.pageX ?? event.touches[0].pageX
 
         //listen the mouse and touch movements
+        docuemnt.addEventListener('mousemove', onMove)
+        document.addEventListener('mouseup', onEnd)
+
+        docuemnt.addEventListener('touchmove', onMove, { passive: true })
+        docuemnt.addEventListener('touchend', onEnd, { passive: true })
+
+    }
+
+    function onMove(event){
+
+    }
+
+    function onEnd(event){
         
     }
 
