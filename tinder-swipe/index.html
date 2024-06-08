@@ -48,23 +48,32 @@
         //get initial position of mouse or finger
             //console.log(event)
         const startX = event.pageX ?? event.touches[0].pageX
+        console.log(startX)
 
         //listen the mouse and touch movements
-        docuemnt.addEventListener('mousemove', onMove)
+        document.addEventListener('mousemove', onMove)
         document.addEventListener('mouseup', onEnd)
 
-        docuemnt.addEventListener('touchmove', onMove, { passive: true })
-        docuemnt.addEventListener('touchend', onEnd, { passive: true })
+        document.addEventListener('touchmove', onMove, { passive: true })
+        document.addEventListener('touchend', onEnd, { passive: true })
 
-    }
-
-    function onMove(event){
-
+        function onMove(event){
+        //current position of mouse or finger
+        const currentX = event.pageX ?? event.touches[0].pageX
+        //the distance between the initial and current position
+        pullDeltaX = currentX - startX
+        //there is no covered distance
+        if (pullDeltaX === 0) return
+        console.log(pullDeltaX)
     }
 
     function onEnd(event){
-        
+
     }
+
+    }
+
+   
 
     document.addEventListener('mousedown', startDrag)
     document.addEventListener('touchstart', startDrag, {passive: true}) 
