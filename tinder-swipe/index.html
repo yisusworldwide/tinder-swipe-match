@@ -65,10 +65,33 @@
         //there is no covered distance
         if (pullDeltaX === 0) return
         console.log(pullDeltaX)
+        //change the flag to indicate we are animating
+        isAnimating = true 
+        //calculate the rotation of the card using the distance
+        const deg = pullDeltaX / 10
+        //apply the transformation to the card 
+        actualCard.style.transform = `translateX(${pullDeltaX}px) rotate (${deg}deg)`
+        //change the cursor to grabbing
+        actualCard.style.cursor = 'grabbing'
     }
 
     function onEnd(event){
+        //remove the event listeners
+        document.removeEventListener('mousemove', onMove)
+        document.removeEventListener('mouseup', onEnd)
 
+        document.removeEventListener('touchmove', onMove)
+        document.removeEventListener('touchend', onEnd)
+
+        //TODO: REMOVE AS WE'RE DOING THIS OTHER WAY
+        //reset the flag 
+        isAnimating = false
+        //reset the distance
+        pullDeltaX = 0
+        //reset the transformation
+        actualCard.style.transform = 'none'
+        //reset de cursor
+        actualCard.style.cursor = 'grab'
     }
 
     }
