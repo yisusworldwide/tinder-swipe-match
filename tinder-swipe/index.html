@@ -44,11 +44,12 @@
 
         //get the first article element
         const actualCard = event.target.closest('article')
+        if (!actualCard) return
 
         //get initial position of mouse or finger
             //console.log(event)
         const startX = event.pageX ?? event.touches[0].pageX
-        console.log(startX)
+            //console.log(startX)
 
         //listen the mouse and touch movements
         document.addEventListener('mousemove', onMove)
@@ -62,15 +63,15 @@
         const currentX = event.pageX ?? event.touches[0].pageX
         //the distance between the initial and current position
         pullDeltaX = currentX - startX
-        //there is no covered distance
+        //there is no covered distance in X axis
         if (pullDeltaX === 0) return
-        console.log(pullDeltaX)
+            //console.log(pullDeltaX)
         //change the flag to indicate we are animating
         isAnimating = true 
         //calculate the rotation of the card using the distance
-        const deg = pullDeltaX / 10
+        const deg = pullDeltaX / 13
         //apply the transformation to the card 
-        actualCard.style.transform = `translateX(${pullDeltaX}px) rotate (${deg}deg)`
+        actualCard.style.transform = `translateX(${pullDeltaX}px) rotate(${deg}deg)`
         //change the cursor to grabbing
         actualCard.style.cursor = 'grabbing'
     }
@@ -99,5 +100,5 @@
    
 
     document.addEventListener('mousedown', startDrag)
-    document.addEventListener('touchstart', startDrag, {passive: true}) 
+    document.addEventListener('touchstart', startDrag, { passive: true }) 
 </script>
