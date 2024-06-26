@@ -36,6 +36,7 @@
 </main>
 
 <script>
+    const DECISION_THRESHOLD = 80
     let isAnimating = false
     let pullDeltaX = 0 //distance from which the card is being dragged
 
@@ -84,15 +85,32 @@
         document.removeEventListener('touchmove', onMove)
         document.removeEventListener('touchend', onEnd)
 
-        //TODO: REMOVE AS WE'RE DOING THIS OTHER WAY
-        //reset the flag 
-        isAnimating = false
-        //reset the distance
-        pullDeltaX = 0
-        //reset the transformation
-        actualCard.style.transform = 'none'
-        //reset de cursor
-        actualCard.style.cursor = 'grab'
+        //know whether the user made a decision
+        const decisionMade = Math.abs(pullDeltaX) >= DECISION_THRESHOLD
+
+        if (decisionMade) {
+            const goRight = pullDeltaX >= 0
+            const goLeft = !goRight
+
+            //add class according to the decision
+            actualCard.classList.add(goRight ? 'go-right' : 'go-left')
+            actualCard.addEventListener('transitionend', () => {
+                actualCard.remove()
+            
+            }, { once: true})
+        } else {
+            actualCard.classList.add('reset')
+            actualCard.classList.remove('go-right', 'go-left')
+        }
+
+        //reset the variables 
+        actualCard.addEventListener('transitionend', () =>{
+            actualCard.removeAttribute('style')
+            actualCard.classList.remove('reset')
+
+            pullDeltaX = 0
+            isAnimating = false
+        })
     }
 
     }

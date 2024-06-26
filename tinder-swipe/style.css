@@ -119,11 +119,21 @@ footer {
         /* will-change: transform rotate; */
 
         &.go-left {
-            transform: translateX(-100%) rotate(-20deg) !important;
+            transform: translateX(-150%) rotate(-30deg) !important;
         }
 
         &.go-right {
-            transform: translateX(100%) rotate(20deg) !important;
+            transform: translateX(150%) rotate(30deg) !important;
+        }
+
+        &.go-left,
+        &.go-right {
+            transition: transform .3s ease, rotate .3s ease;
+        }
+
+        &.reset {
+            transition: transform .3s ease;
+            transform: translateX(0) !important;
         }
 
         & img {
