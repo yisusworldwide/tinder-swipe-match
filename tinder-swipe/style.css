@@ -112,7 +112,6 @@ footer {
         font-size: 14px;
         text-align: center;
         height: 100%;
-        /* width: 100%; */
         margin: 0 auto;
         z-index: -1;
     }
@@ -146,6 +145,37 @@ footer {
         &.reset {
             transition: transform .3s ease;
             transform: translateX(0) !important;
+        }
+
+        &.choice {
+            border-radius: 8px;
+            color: black;
+            border: 4px solid;
+            z-index: 9999;
+            position: absolute;
+            top: 32px;
+            right: 16px;
+            opacity: 0;
+            padding: 4px 8px;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(0, 0, 0, .3);
+
+            &.nope {
+                border-color: #ff6e63;
+                /* background: #f44336; */
+                color: #ff6e63;
+                transform: rotate(30deg);
+            }
+
+            &.like {
+                /* change these colors to more vivid */
+                border-color: #4caf50; 
+                /* background: #4caf50; */
+                color: #4caf50;
+                left: 16px;
+                transform: rotate(-30deg);
+            }
         }
 
         & img {
