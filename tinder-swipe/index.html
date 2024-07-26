@@ -1,7 +1,7 @@
 <title>Tinder Swap</title>
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <!-- <script defer type="text/javascript" src="script.js"></script> -->
+    <script defer type="text/javascript" src="script.js"></script>
 </head>
 
 <main>
@@ -39,7 +39,9 @@
 </main>
 
 <script>
+
     const DECISION_THRESHOLD = 80
+    
     let isAnimating = false
     let pullDeltaX = 0 //distance from which the card is being dragged
 
@@ -103,14 +105,12 @@
 
         if (decisionMade) {
             const goRight = pullDeltaX >= 0
-            const goLeft = !goRight
 
             //add class according to the decision
             actualCard.classList.add(goRight ? 'go-right' : 'go-left')
             actualCard.addEventListener('transitionend', () => {
                 actualCard.remove()
-            
-            }, { once: true})
+            })
         } else {
             actualCard.classList.add('reset')
             actualCard.classList.remove('go-right', 'go-left')
