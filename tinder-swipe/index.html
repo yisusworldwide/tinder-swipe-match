@@ -1,7 +1,7 @@
 <title>Tinder Swap</title>
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script defer type="text/javascript" src="script.js"></script>
+    <!-- <script defer type="text/javascript" src="script.js"></script> -->
 </head>
 
 <main>
@@ -53,9 +53,7 @@
         if (!actualCard) return
 
         //get initial position of mouse or finger
-            //console.log(event)
         const startX = event.pageX ?? event.touches[0].pageX
-            //console.log(startX)
 
         //listen the mouse and touch movements
         document.addEventListener('mousemove', onMove)
@@ -71,7 +69,6 @@
         pullDeltaX = currentX - startX
         //there is no covered distance in X axis
         if (pullDeltaX === 0) return
-            //console.log(pullDeltaX)
         //change the flag to indicate we are animating
         isAnimating = true 
         //calculate the rotation of the card using the distance
