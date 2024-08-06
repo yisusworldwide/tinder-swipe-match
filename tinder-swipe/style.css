@@ -10,8 +10,8 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 
     'Helvetica Neue', sans-serif;
-    display:grid;
-    place-content:center;
+    display: grid;
+    place-content: center;
     min-height: 100vh;
     overflow: hidden;
     user-select: none;
@@ -24,11 +24,12 @@ main {
     width: 320px;
     height: 640px;
     display: flex;
-    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+    position: relative;
+    /* filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3)); */
 }
 
 section {
-    background: #f6f6f6;
+    /* background: #f6f6f6; */
     width: 100%;
     border-radius: 32px;
     gap: 24px;
@@ -42,7 +43,8 @@ section {
 
 header {
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    padding-left: 1rem;
 
     & img {
         width: 24px;
@@ -59,14 +61,14 @@ footer {
     align-items: center;
 
     & button {
-        background: url('tinder-icons.webp') no-repeat;
+        background: url('./tinder-icons.webp') no-repeat;
         background-position: 0px 0px;
         background-size: 175px;
         height: 32px;
         width: 32px;
         border-radius: 50%;
-        /* border: 0; */
-        border: 1px solid #ccc;
+        border: 0;
+        /* border: 1px solid #ccc; */
         cursor: pointer;
         transition: scale .3s ease;
 
@@ -112,7 +114,7 @@ footer {
         font-size: 14px;
         text-align: center;
         height: 100%;
-        margin: 0 auto;
+        /* margin: 0 auto; */
         z-index: -1;
     }
 
@@ -162,6 +164,7 @@ footer {
             text-shadow: 0 0 10px rgba(0, 0, 0, .3);
             width: fit-content;
 
+            /* check whether we have these classes */
             &.nope {
                 border-color: #ff6e63;
                 /* background: #f44336; */
