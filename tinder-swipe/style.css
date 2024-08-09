@@ -175,7 +175,6 @@ footer {
             text-shadow: 0 0 10px rgba(0, 0, 0, .3);
             width: fit-content;
 
-            /* check whether we have these classes */
             &.nope {
                 border-color: #ff6e63;
                 /* background: #f44336; */
@@ -184,10 +183,9 @@ footer {
             }
 
             &.like {
-                /* change these colors to more vivid */
-                border-color: #4caf50; 
+                border-color: #63ff68; 
                 /* background: #4caf50; */
-                color: #4caf50;
+                color: #63ff68;
                 left: 16px;
                 transform: rotate(-30deg);
             }
