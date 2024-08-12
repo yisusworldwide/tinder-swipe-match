@@ -36,11 +36,9 @@ main {
     height: 640px;
     display: flex;
     position: relative;
-    /* filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3)); */
 }
 
 section {
-    /* background: #f6f6f6; */
     width: 100%;
     border-radius: 32px;
     gap: 24px;
@@ -79,7 +77,6 @@ footer {
         width: 32px;
         border-radius: 50%;
         border: 0;
-        /* border: 1px solid #ccc; */
         cursor: pointer;
         transition: scale .3s ease;
 
@@ -125,7 +122,6 @@ footer {
         font-size: 14px;
         text-align: center;
         height: 100%;
-        /* margin: 0 auto; */
         z-index: -1;
     }
 
@@ -177,14 +173,12 @@ footer {
 
             &.nope {
                 border-color: #ff6e63;
-                /* background: #f44336; */
                 color: #ff6e63;
                 transform: rotate(30deg);
             }
 
             &.like {
                 border-color: #63ff68; 
-                /* background: #4caf50; */
                 color: #63ff68;
                 left: 16px;
                 transform: rotate(-30deg);
